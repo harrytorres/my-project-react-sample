@@ -59,12 +59,16 @@ function Signup() {
           headers: {
             "Access-Control-Allow-Origin" : "*",
             "Content-Type" : "application/json",
+            "Access-Control-Allow-Credentials" : "true",
+            "Access-Control-Allow-Headers" : "content-type",
+            "Access-Control-Allow-Methods" : "PUT, POST, GET, DELETE, PATCH, OPTIONS",
             "Accept" : "*"
+            
         },
             url: "http://localhost:3000/users", 
-           data: {formData}
+           data: JSON.stringify(formData)
         })
-        .then(response => response.json())
+        .then(response => response.data)
         .then(data => setUserData(data))
         .catch(error => console.log("this is error",error));
     };

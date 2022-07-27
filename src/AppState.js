@@ -12,7 +12,6 @@ const initialState = {
 // REDUCER
 
 const reducer = (state, action) => {
-    console.log(action)
     let newState;
     switch(action.type){
 
